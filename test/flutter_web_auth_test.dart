@@ -9,8 +9,8 @@ void main() {
     channel.setMockMethodCallHandler((MethodCall methodCall) async {
       expect(methodCall.method, 'authenticate');
 
-      expect(methodCall.arguments['url'] as String, 'https://example.com/login');
-      expect(methodCall.arguments['callbackUrlScheme'] as String, 'foobar');
+      expect(methodCall.arguments['url'] as String?, 'https://example.com/login');
+      expect(methodCall.arguments['callbackUrlScheme'] as String?, 'foobar');
 
       return 'https://example.com/success';
     });
